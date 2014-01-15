@@ -1,0 +1,14 @@
+
+AddDefaultCharset windows-1251
+DirectoryIndex index.php
+
+RewriteEngine on
+RewriteBase     /
+RewriteRule ^.htaccess$ - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+
+

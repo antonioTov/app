@@ -1,0 +1,20 @@
+
+<div class="input_form">
+    <div class="top_form">
+        <div class="lockscreen"></div>
+        <div class="r3">Введите логин и пароль</div>
+    </div>
+
+    <? if($this->error) { ?>
+        <div class="error">Неправильный логин или пароль</div>
+    <? } ?>
+
+    <form  method="POST">
+        <div class="label">Логин:</div>
+        <input class="input_auth" type="text" name="login" value="<? echo $this->login?>" />
+        <div class="label" >Пароль:</div>
+        <input class="input_auth" type="password" name="pass"  />
+        <div class="button"><input type="submit" class="new" style="float: right;" value="Войти" /></div>
+    </form>
+</div>
+

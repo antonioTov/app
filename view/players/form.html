@@ -1,0 +1,57 @@
+<? echo $this->legend ?>
+
+<form class="add_edit_form" id="add_edit_form" name="add_edit_form" method="POST">
+
+	<div class="fields_block">
+
+
+		<? if ( $this->errors['empty'] ) { 	?>
+			<div class="error">Заполните все поля!</div>
+		<? } ?>
+
+		<? if ( $this->errors['username'] ) { ?>
+			<div class="error">Такое имя пользователя уже используется!</div>
+		<? } ?>
+
+		<? if ( $this->errors['email'] ) { ?>
+			<div class="error">Введите корректный e-mail!</div>
+		<? } ?>
+
+		<? if ( $this->errors['length'] ) { ?>
+			<div class="error">Поле <b><? echo $this->errors['name'] ?></b> не должно превышать <? echo $this->errors['length'] ?> символов</div>
+		<? } ?>
+
+
+		<div class="form_item">
+			<div class="label">Username:</div>
+			<input name="username" type="text"  class="f" value="<? echo $this->username ?>" <? if ( $this->errors['username'] ) { ?> class="busy" <? } ?>  autocomplete="off"  <? echo ($this->context == 'edit') ? 'readonly' : '' ?>>
+		</div>
+
+		<div class="form_item">
+			<div class="label">First name:</div>
+			<input name="first_name" type="text" class="f" value="<? echo $this->first_name ?>">
+		</div>
+
+		<div class="form_item">
+			<div class="label">Last name:</div>
+			<input name="last_name" type="text" class="f" value="<? echo $this->last_name ?>">
+		</div>
+
+		<div class="form_item">
+			<div class="label">Date of birth:</div>
+			<input name="birth_date" type="text" class="f" value="<? if($this->birth_date) echo date( 'd.m.Y', strtotime($this->birth_date) ) ?>" id="datepicker" autocomplete="off">
+		</div>
+
+		<div class="form_item">
+			<div class="label">E-mail:</div>
+			<input name="email" type="text" class="f"  value="<? echo $this->email ?>">
+		</div>
+
+		<input type="hidden" name="admin_id" value="<? echo $this->admin_id ?>">
+		<input type="hidden" name="context" value="<? echo $this->context ?>">
+		<input type="hidden" name="player_id" value="<? echo $this->player_id ?>">
+		<input type="submit" class="new" id="submit_btn" name="submitButton" value="Сохранить">
+
+	</div>
+	<div class="clear"></div>
+</form>

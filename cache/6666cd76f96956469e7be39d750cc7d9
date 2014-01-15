@@ -1,0 +1,150 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; windows-1251">
+    <title>91.200.42.142 | Admin Panel</title>
+
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="/design/css/admin_style.css" />
+    <!--[if IE 8]><link rel="stylesheet" type="text/css" href="/design/css/IE8.css" /><![endif]-->
+
+    <link rel="shortcut icon" href="/design/img/favicon.ico">
+
+    <script type="text/javascript" src="/design/js/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script type="text/javascript" src="/design/js/common.js"></script>
+
+    <!--[if lt IE 7]>
+    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+<div class="top">
+	<div class="header_title"><a  href="/">91.200.42.142</a> | ADMINISTRATION</div>
+</div>
+
+<div class="wrapper">
+
+            <div id="mainMenu">
+            <div class="jqueryslidemenu">
+                <ul>
+                    <li><a href="/">Игроки</a></li>
+                </ul>
+            </div>
+            <div class="jqueryslidemenu" style="float: right;">
+                <ul>
+					<li><span class="auth-name">admin</span></li>
+                    <li><a href="/auth/logout">Выход</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    
+    <div class="container">
+
+        <div class="content"> <div class='legend2'>&#8658; Все игроки </div>
+
+<div class="tool_bar">
+		<span id="search"><img src="/design/img/search-icon.png" height="35"  title="Поиск"></span>
+		<span id="back"><img src="/design/img/back.png" height="35" onclick="history.back()" title="Назад"></span>
+		<span id="next"><img src="/design/img/next.png" height="35" onclick="history.forward()" title="Вперед"></span>
+		<a href="/players/add/" class="new"><img src="/design/img/add.png" height="25" style="float: left;"><span>Добавить игрока</span></a>
+</div>
+
+<div class="clear"></div>
+
+<div id="search-cont" class="">
+	<h1>
+		Поиск
+
+			</h1>
+
+	<form action="/players/search" method="GET">
+
+		
+		<p>
+			<label>Username</label>
+			<input type="text" name="username" value="">
+		</p>
+		<p>
+			<label>First Name</label>
+			<input type="text" name="first_name" value="">
+		</p>
+		<p>
+			<label>Last Name</label>
+			<input type="text" name="last_name" value="">
+		</p>
+		<p>
+			<label>Date of birth</label>
+			<input type="text" name="birth_date" value=""  id="datepicker">
+		</p>
+		<p>
+			<label>E-mail</label>
+			<input type="text" name="email" value="">
+		</p>
+		<p>
+			<label>Admin name</label>
+			<input type="text" name="admin_id" value="">
+		</p>
+		<p>
+			<input type="submit" class="new" id="submit_btn" value="Search"/>
+		</p>
+	</form>
+</div>
+
+
+<form method="POST" id="view_form">
+    <table class="view-table">
+        <thead>
+        <tr class="table_header">
+            <th class="w40"><div class="td_center"><input type="checkbox" id="check_all"></div></th>
+            <th>Username</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Date of birth</th>
+            <th>E-mail</th>
+            <th>Create admin</th>
+			<th class="w40">Edit</th>
+			<th class="w40">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        			<tr>
+				<td><div class="td_center"><input type="checkbox" name="check[]" value="1"></div></td>
+				<td><a href="/players/edit/1">Plaeyr1</a></td>
+				<td>Anton</td>
+				<td>Tovstenko</td>
+				<td class="td_center">28.01.1987</td>
+				<td>tov.ua@ukr.net</td>
+				<td class="td_center">admin</td>
+				<td class="td_center"><a href="/players/edit/1"><img src="/design/img/edit.png" title="редактировать" /></a></td>
+				<td class="td_center"><a href="/players/delete/1" class="delete"><img src="/design/img/del.png" title="удалить"/></a></td>
+			</tr>
+		
+		</tbody>
+    </table>
+    <div class="table_bottom">
+        <div>
+            <select name="event" class="events">
+                <option value="">Действие...</option>
+                <option value="delete">Удалть</option>
+            </select>
+            <a href="#" class="new" id="event_apply" style="margin: 2px;">Применить</a>
+        </div>
+    </div>
+</form>
+
+</div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
